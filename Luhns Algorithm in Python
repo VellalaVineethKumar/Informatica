@@ -1,0 +1,43 @@
+cardno=4967171580236497
+print(cardno)
+
+lisno= list(map(int, str(cardno)))
+
+print(lisno)
+
+sumodd=0 
+sumeven=0
+ret=0
+
+
+
+
+def getsum(num):
+    singsum=0 
+    while(num/10>0):
+        singsum+=num%10
+        num=num//10
+    print(singsum)
+    return singsum
+        
+
+for i in range(len(lisno)):
+    if(i%2!=0):
+        sumodd+=lisno[i]
+    else:
+        
+        ret=getsum(lisno[i]*2)
+        sumeven+=ret
+        
+        
+print("ODD",sumodd,"Even",sumeven)
+
+
+
+totsum=sumeven+sumodd
+
+if(totsum%10==0):
+    print("Valid Credit Card")
+else:
+    print("Invalid Credit card")
+        
