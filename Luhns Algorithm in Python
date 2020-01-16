@@ -1,9 +1,14 @@
-cardno=4967171580236497
-print(cardno)
+print("Enter Card Number to Check")
+
+cardno=int(input())
+
+if(len(str(cardno))<10):
+    print("Enter Vaild Card number")
+    exit(0)
+print("You Entered",cardno)
 
 lisno= list(map(int, str(cardno)))
 
-print(lisno)
 
 sumodd=0 
 sumeven=0
@@ -17,7 +22,6 @@ def getsum(num):
     while(num/10>0):
         singsum+=num%10
         num=num//10
-    print(singsum)
     return singsum
         
 
